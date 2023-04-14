@@ -42,7 +42,7 @@ class LocationRepository
         if (! $clickLocation) {
             return LocationRepository::locationUnknown($ip);
         }
-        $clickLocation
+
         $clickLocation['longitude'] = (float) $clickLocation['longitude'];
         $clickLocation['latitude'] = (float) $clickLocation['latitude'];
 
