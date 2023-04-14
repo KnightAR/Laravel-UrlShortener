@@ -37,12 +37,12 @@ class LocationRepository
 
     public static function getLocationFrom(string $ip): array
     {
-        $clickLocation = Location::get($ip);
+        $clickLocation = (array) Location::get($ip);
 
         if (! $clickLocation) {
             return LocationRepository::locationUnknown($ip);
         }
-
+        $clickLocation
         $clickLocation['longitude'] = (float) $clickLocation['longitude'];
         $clickLocation['latitude'] = (float) $clickLocation['latitude'];
 
